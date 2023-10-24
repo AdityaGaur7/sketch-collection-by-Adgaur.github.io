@@ -243,5 +243,10 @@ button:hover {
     border: 0;
     margin-top: 2.5vh;
 }
+.name{
+    margin: auto;
+    left: 13vw;
+    position: relative;
+}
 
 }
