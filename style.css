@@ -5,7 +5,9 @@
     transition: .34s all ease;
 }
 
-
+body{
+    overflow-x: hidden;
+}
 .container {
     margin-top: 10vh;
     width: 100%;
@@ -40,13 +42,17 @@ video,
 .box a {
     -webkit-filter: blur(1.5px);
     filter: blur(1.5px);
+    -webkit-filter: invert(1);
+    margin: auto;
 }
 
 .box a:hover {
     -webkit-filter: blur(0px);
+    transition: .33s ease-in-out;
     filter: blur(0px);
     -webkit-filter: brightness(20px);
-
+   
+    
     filter: hue-rotate(20px);
     transform: scale(1.1);
 
@@ -54,7 +60,7 @@ video,
 }
 
 .box a img:hover{
-    transform: rotate(10deg);
+    /* transform: rotate(10deg); */
 }
 
 .navbar {
@@ -80,8 +86,10 @@ video,
 
 #logo {
     height: 8vh;
+    position: relative;
     margin: 2vh;
     width: auto;
+    top: 1vh;
 }
 #logo:hover{
     transform: scale(1.2);
@@ -89,7 +97,7 @@ video,
 
 .footer {
     width: 100%;
-    height: 10vh;
+    height: 14vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -113,7 +121,7 @@ video,
     width: 2vw;
     height: auto;
     margin: 3px;
-    border-radius: 10px;
+    border-radius: 5px;
 
 }
 
@@ -123,18 +131,38 @@ video,
     font-weight: 700;
     margin: 2vw 3vh;
 }
-.name h2:hover{
+/* .name h2:hover{
     transform: translatex(-70px);
     color: rgb(247, 243, 9);
     text-shadow: 4px 5px 5px rgb(248, 248, 245);
     font-size: 30px;
-}
+} */
 
+.name h2 a{
+    color: white;
+    text-decoration: none;
+    list-style: none;
+    font-family: sans-serif;
+}
 .link a img:hover {
     transform: rotate(180deg) scale(1.2);
 
 }
-
+span{
+    animation: ani 1s 0s infinite normal ;
+}
+@keyframes ani {
+    0%{
+        color: blue;
+    }
+    50%{
+        color:red;
+    }
+    100%{
+        color: white;
+    }
+    
+}
 button {
     position: fixed;
     top: 3.5%;
@@ -144,27 +172,45 @@ button {
     font-size: 20px;
     border-radius: 20px;
     font-family: fantasy;
+    color: white;
+   
 
 }
 
 button:hover {
-    transform: rotate(360deg);
+    transform: rotateY(360deg);
     box-shadow: 2px 5px 4px rgb(9, 5, 5);
 }
 
 #arrow{
     outline: 0;
     border: 0;
+    animation: blink 1s 0s infinite normal;
+    
+}
+
+@keyframes blink {
+    0%, 100% {
+        color: red;
+        font-size: 19px;
+    }
+    50% {
+        color: yellow;
+        font-size: 20px;
+    }
 }
 
 @media (max-width:600px) {
-    .name {
-        display: none;
-    }
+  .name h2 a{
+    font-size:15px;
+  }
+    
 
     #logo {
         width: auto;
-        height: 12vw;
+        position: absolute;
+        height: 5vw;
+        left: 14vw;
     }
 
     #gif {
@@ -173,12 +219,13 @@ button:hover {
     }
 
     .navbar {
-        height: 10vh;
+        height: 11vh;
     }
 
     .box a,
     img {
         filter: none;
+        
 
 
     }
@@ -191,9 +238,10 @@ button:hover {
         height:auto;
 }
 #arrow{
-    margin-left: 8vw;
+    margin-left: 23vw;
     outline: 0;
     border: 0;
-    margin-top: -1vh;
+    margin-top: 2.5vh;
 }
+
 }
